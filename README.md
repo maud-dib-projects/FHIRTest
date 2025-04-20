@@ -1,2 +1,2 @@
 # FHIRTest
-for canned FIHR responses
+for canned FHIR responses
