@@ -3,6 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
+const path = require('path');
 const swaggerUi = require('swagger-ui-express');
 const swaggerSpecs = require('./swagger');
 
@@ -30,11 +31,19 @@ app.use(cors());
 app.use(express.json());
 app.use(morgan('dev'));
 
+// Serve static files
+app.use(express.static(path.join(__dirname, '../public')));
+
+// Root route to serve the index.html page
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/index.html'));
+});
+
 // API Documentation
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpecs, { 
   explorer: true,
   swaggerOptions: {
-    validatorUrl: null  // Disable validator
+    validatorUrl: null,  // Disable validator
   }
 }));
 
