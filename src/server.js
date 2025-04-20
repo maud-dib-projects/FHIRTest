@@ -39,6 +39,11 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
+// Patient details page route
+app.get('/patient-details.html', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/patient-details.html'));
+});
+
 // API Documentation
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpecs, { 
   explorer: true,

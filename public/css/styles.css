@@ -7,35 +7,127 @@ body {
   line-height: 1.6;
 }
 
+/* Container styles (for non-Tailwind fallback) */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
 }
 
+/* Typography */
 h1, h2, h3 {
-  color: #2c3e50;
+  color: #4338ca;
+  margin-top: 0;
 }
 
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+}
+
+/* Links */
 a {
-  color: #3498db;
+  color: #4f46e5;
   text-decoration: none;
+  transition: all 0.2s ease;
 }
 
 a:hover {
   text-decoration: underline;
+  color: #4338ca;
 }
 
+/* Button styles (for non-Tailwind fallback) */
 .button {
   display: inline-block;
-  background-color: #3498db;
+  background-color: #4f46e5;
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 4px;
   cursor: pointer;
   border: none;
+  transition: background-color 0.2s ease;
 }
 
 .button:hover {
-  background-color: #2980b9;
+  background-color: #4338ca;
+}
+
+/* Table styles (for non-Tailwind fallback) */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+th {
+  text-align: left;
+  padding: 0.75rem;
+  background-color: #f9fafb;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+/* Card styles */
+.card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.card-header {
+  padding: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+/* Animation for loading states */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.loading {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 } 
