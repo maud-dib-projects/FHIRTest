@@ -2,45 +2,40 @@
  * Sample coverage data following FHIR R4 standard
  */
 const coverages = [
-  // Patient 001 Coverage
   {
-    resourceType: 'Coverage',
-    id: 'coverage-001',
-    status: 'active',
+    resourceType: "Coverage",
+    id: "cov-12345",
+    status: "active",
     type: {
       coding: [
         {
-          system: 'http://terminology.hl7.org/CodeSystem/v3-ActCode',
-          code: 'EHCPOL',
-          display: 'extended healthcare'
+          system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          code: "EHCPOL",
+          display: "extended healthcare"
         }
-      ],
-      text: 'Health Insurance'
+      ]
     },
     subscriber: {
-      reference: 'Patient/patient-001',
-      display: 'John Smith'
+      reference: "Patient/erXuFYUfucBZaryVksYEcMg3"
     },
     beneficiary: {
-      reference: 'Patient/patient-001',
-      display: 'John Smith'
+      reference: "Patient/erXuFYUfucBZaryVksYEcMg3"
     },
     relationship: {
       coding: [
         {
-          system: 'http://terminology.hl7.org/CodeSystem/subscriber-relationship',
-          code: 'self',
-          display: 'Self'
+          system: "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+          code: "self"
         }
       ]
     },
     period: {
-      start: '2023-01-01',
-      end: '2023-12-31'
+      start: "2023-01-01",
+      end: "2023-12-31"
     },
     payor: [
       {
-        display: 'Blue Cross Blue Shield'
+        reference: "Organization/org-bluecross"
       }
     ],
     class: [
@@ -48,70 +43,62 @@ const coverages = [
         type: {
           coding: [
             {
-              system: 'http://terminology.hl7.org/CodeSystem/coverage-class',
-              code: 'group',
-              display: 'Group'
+              system: "http://terminology.hl7.org/CodeSystem/coverage-class",
+              code: "group"
             }
           ]
         },
-        value: 'BCS-GOLD-01',
-        name: 'Blue Cross Gold Plan'
+        value: "BCGROUP123",
+        name: "Blue Cross Group Plan"
       },
       {
         type: {
           coding: [
             {
-              system: 'http://terminology.hl7.org/CodeSystem/coverage-class',
-              code: 'plan',
-              display: 'Plan'
+              system: "http://terminology.hl7.org/CodeSystem/coverage-class",
+              code: "plan"
             }
           ]
         },
-        value: 'BCS-GOLD-01-001',
-        name: 'Family Plan'
+        value: "PREMIUM",
+        name: "Premium Plan"
       }
     ]
   },
-  
-  // Patient 002 Coverage
   {
-    resourceType: 'Coverage',
-    id: 'coverage-002',
-    status: 'active',
+    resourceType: "Coverage",
+    id: "cov-67890",
+    status: "active",
     type: {
       coding: [
         {
-          system: 'http://terminology.hl7.org/CodeSystem/v3-ActCode',
-          code: 'EHCPOL',
-          display: 'extended healthcare'
+          system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          code: "EHCPOL",
+          display: "extended healthcare"
         }
-      ],
-      text: 'Health Insurance'
+      ]
     },
     subscriber: {
-      reference: 'Patient/patient-002',
-      display: 'Emily Johnson'
+      reference: "Patient/eq081-VQEgP8drUUqCWzHfw3"
     },
     beneficiary: {
-      reference: 'Patient/patient-002',
-      display: 'Emily Johnson'
+      reference: "Patient/eq081-VQEgP8drUUqCWzHfw3"
     },
     relationship: {
       coding: [
         {
-          system: 'http://terminology.hl7.org/CodeSystem/subscriber-relationship',
-          code: 'self',
-          display: 'Self'
+          system: "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+          code: "self"
         }
       ]
     },
     period: {
-      start: '2023-01-01',
-      end: '2023-12-31'
+      start: "2023-01-01",
+      end: "2023-12-31"
     },
     payor: [
       {
-        display: 'Aetna'
+        reference: "Organization/org-aetna"
       }
     ],
     class: [
@@ -119,70 +106,62 @@ const coverages = [
         type: {
           coding: [
             {
-              system: 'http://terminology.hl7.org/CodeSystem/coverage-class',
-              code: 'group',
-              display: 'Group'
+              system: "http://terminology.hl7.org/CodeSystem/coverage-class",
+              code: "group"
             }
           ]
         },
-        value: 'AET-SILVER-02',
-        name: 'Aetna Silver Plan'
+        value: "AETGRP456",
+        name: "Aetna Group Plan"
       },
       {
         type: {
           coding: [
             {
-              system: 'http://terminology.hl7.org/CodeSystem/coverage-class',
-              code: 'plan',
-              display: 'Plan'
+              system: "http://terminology.hl7.org/CodeSystem/coverage-class",
+              code: "plan"
             }
           ]
         },
-        value: 'AET-SILVER-02-001',
-        name: 'Individual Plan'
+        value: "STANDARD",
+        name: "Standard Plan"
       }
     ]
   },
-  
-  // Patient 003 Coverage
   {
-    resourceType: 'Coverage',
-    id: 'coverage-003',
-    status: 'active',
+    resourceType: "Coverage",
+    id: "cov-54321",
+    status: "active",
     type: {
       coding: [
         {
-          system: 'http://terminology.hl7.org/CodeSystem/v3-ActCode',
-          code: 'EHCPOL',
-          display: 'extended healthcare'
+          system: "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          code: "EHCPOL",
+          display: "extended healthcare"
         }
-      ],
-      text: 'Health Insurance'
+      ]
     },
     subscriber: {
-      reference: 'Patient/patient-003',
-      display: 'Miguel Garcia'
+      reference: "Patient/eAB3mDIBBcyUKviyzrxsnAw3"
     },
     beneficiary: {
-      reference: 'Patient/patient-003',
-      display: 'Miguel Garcia'
+      reference: "Patient/eAB3mDIBBcyUKviyzrxsnAw3"
     },
     relationship: {
       coding: [
         {
-          system: 'http://terminology.hl7.org/CodeSystem/subscriber-relationship',
-          code: 'self',
-          display: 'Self'
+          system: "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+          code: "self"
         }
       ]
     },
     period: {
-      start: '2023-01-01',
-      end: '2023-12-31'
+      start: "2023-01-01",
+      end: "2023-12-31"
     },
     payor: [
       {
-        display: 'United Healthcare'
+        reference: "Organization/org-cigna"
       }
     ],
     class: [
@@ -190,27 +169,25 @@ const coverages = [
         type: {
           coding: [
             {
-              system: 'http://terminology.hl7.org/CodeSystem/coverage-class',
-              code: 'group',
-              display: 'Group'
+              system: "http://terminology.hl7.org/CodeSystem/coverage-class",
+              code: "group"
             }
           ]
         },
-        value: 'UHC-PREMIUM-03',
-        name: 'UnitedHealthcare Premium Plan'
+        value: "CIGGRP789",
+        name: "Cigna Group Plan"
       },
       {
         type: {
           coding: [
             {
-              system: 'http://terminology.hl7.org/CodeSystem/coverage-class',
-              code: 'plan',
-              display: 'Plan'
+              system: "http://terminology.hl7.org/CodeSystem/coverage-class",
+              code: "plan"
             }
           ]
         },
-        value: 'UHC-PREMIUM-03-002',
-        name: 'Family Plus Plan'
+        value: "GOLD",
+        name: "Gold Plan"
       }
     ]
   }
