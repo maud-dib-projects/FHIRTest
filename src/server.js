@@ -42,7 +42,7 @@ app.get('/', (req, res) => {
 // API Documentation
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpecs, { 
   explorer: true,
-  customCssUrl: 'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.6.2/swagger-ui.css', 
+  customCssUrl: 'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.7.0/swagger-ui.min.css', 
   swaggerOptions: {
     validatorUrl: null,  // Disable validator
   }
