@@ -3,7 +3,7 @@
  * Includes both laboratory and assessment observations
  */
 const observations = [
-  // Laboratory observations for Patient 1 (Lopez)
+  // Laboratory observations for Patient 1 (Lopez - Lupus patient)
   {
     resourceType: "Observation",
     id: "obs-lab-12345-1",
@@ -23,8 +23,8 @@ const observations = [
       coding: [
         {
           system: "http://loinc.org",
-          code: "2093-3",
-          display: "Cholesterol, Total"
+          code: "56540-8",
+          display: "Anti-nuclear antibody (ANA) panel"
         }
       ]
     },
@@ -39,37 +39,56 @@ const observations = [
         display: "Downtown Medical Laboratory"
       }
     ],
-    valueQuantity: {
-      value: 210,
-      unit: "mg/dL",
-      system: "http://unitsofmeasure.org",
-      code: "mg/dL"
-    },
-    referenceRange: [
+    hasMember: [
       {
-        low: {
-          value: 0,
-          unit: "mg/dL",
-          system: "http://unitsofmeasure.org",
-          code: "mg/dL"
-        },
-        high: {
-          value: 200,
-          unit: "mg/dL",
-          system: "http://unitsofmeasure.org",
-          code: "mg/dL"
-        },
-        type: {
-          coding: [
-            {
-              system: "http://terminology.hl7.org/CodeSystem/referencerange-meaning",
-              code: "normal",
-              display: "Normal Range"
-            }
-          ]
-        }
+        reference: "Observation/obs-lab-12345-1-ana-titer"
+      },
+      {
+        reference: "Observation/obs-lab-12345-1-ana-pattern"
       }
     ],
+    note: [
+      {
+        text: "Strong positive ANA result consistent with autoimmune disorder."
+      }
+    ]
+  },
+  {
+    resourceType: "Observation",
+    id: "obs-lab-12345-1-ana-titer",
+    status: "final",
+    category: [
+      {
+        coding: [
+          {
+            system: "http://terminology.hl7.org/CodeSystem/observation-category",
+            code: "laboratory",
+            display: "Laboratory"
+          }
+        ]
+      }
+    ],
+    code: {
+      coding: [
+        {
+          system: "http://loinc.org",
+          code: "5041-9",
+          display: "Anti-nuclear antibody titer"
+        }
+      ]
+    },
+    subject: {
+      reference: "Patient/erXuFYUfucBZaryVksYEcMg3"
+    },
+    effectiveDateTime: "2023-04-15T08:30:00Z",
+    issued: "2023-04-15T10:45:00Z",
+    performer: [
+      {
+        reference: "Organization/org-lab-12345",
+        display: "Downtown Medical Laboratory"
+      }
+    ],
+    valueString: "1:640",
     interpretation: [
       {
         coding: [
@@ -81,6 +100,52 @@ const observations = [
         ]
       }
     ]
+  },
+  {
+    resourceType: "Observation",
+    id: "obs-lab-12345-1-ana-pattern",
+    status: "final",
+    category: [
+      {
+        coding: [
+          {
+            system: "http://terminology.hl7.org/CodeSystem/observation-category",
+            code: "laboratory",
+            display: "Laboratory"
+          }
+        ]
+      }
+    ],
+    code: {
+      coding: [
+        {
+          system: "http://loinc.org",
+          code: "26447-3",
+          display: "Anti-nuclear antibody pattern"
+        }
+      ]
+    },
+    subject: {
+      reference: "Patient/erXuFYUfucBZaryVksYEcMg3"
+    },
+    effectiveDateTime: "2023-04-15T08:30:00Z",
+    issued: "2023-04-15T10:45:00Z",
+    performer: [
+      {
+        reference: "Organization/org-lab-12345",
+        display: "Downtown Medical Laboratory"
+      }
+    ],
+    valueCodeableConcept: {
+      coding: [
+        {
+          system: "http://snomed.info/sct",
+          code: "442037110",
+          display: "Homogeneous pattern"
+        }
+      ],
+      text: "Homogeneous"
+    }
   },
   {
     resourceType: "Observation",
@@ -101,8 +166,8 @@ const observations = [
       coding: [
         {
           system: "http://loinc.org",
-          code: "2571-8",
-          display: "Triglycerides"
+          code: "51500-8",
+          display: "Anti-double stranded DNA antibody [Titer]"
         }
       ]
     },
@@ -118,24 +183,24 @@ const observations = [
       }
     ],
     valueQuantity: {
-      value: 180,
-      unit: "mg/dL",
+      value: 75,
+      unit: "IU/mL",
       system: "http://unitsofmeasure.org",
-      code: "mg/dL"
+      code: "IU/mL"
     },
     referenceRange: [
       {
         low: {
           value: 0,
-          unit: "mg/dL",
+          unit: "IU/mL",
           system: "http://unitsofmeasure.org",
-          code: "mg/dL"
+          code: "IU/mL"
         },
         high: {
-          value: 150,
-          unit: "mg/dL",
+          value: 30,
+          unit: "IU/mL",
           system: "http://unitsofmeasure.org",
-          code: "mg/dL"
+          code: "IU/mL"
         },
         type: {
           coding: [
@@ -160,8 +225,198 @@ const observations = [
       }
     ]
   },
+  {
+    resourceType: "Observation",
+    id: "obs-lab-12345-3",
+    status: "final",
+    category: [
+      {
+        coding: [
+          {
+            system: "http://terminology.hl7.org/CodeSystem/observation-category",
+            code: "laboratory",
+            display: "Laboratory"
+          }
+        ]
+      }
+    ],
+    code: {
+      coding: [
+        {
+          system: "http://loinc.org",
+          code: "4625-0",
+          display: "Complete Blood Count"
+        }
+      ]
+    },
+    subject: {
+      reference: "Patient/erXuFYUfucBZaryVksYEcMg3"
+    },
+    effectiveDateTime: "2023-04-15T08:30:00Z",
+    issued: "2023-04-15T10:45:00Z",
+    performer: [
+      {
+        reference: "Organization/org-lab-12345",
+        display: "Downtown Medical Laboratory"
+      }
+    ],
+    hasMember: [
+      {
+        reference: "Observation/obs-lab-12345-3-hemoglobin"
+      },
+      {
+        reference: "Observation/obs-lab-12345-3-wbc"
+      },
+      {
+        reference: "Observation/obs-lab-12345-3-platelets"
+      }
+    ]
+  },
+  {
+    resourceType: "Observation",
+    id: "obs-lab-12345-3-hemoglobin",
+    status: "final",
+    category: [
+      {
+        coding: [
+          {
+            system: "http://terminology.hl7.org/CodeSystem/observation-category",
+            code: "laboratory",
+            display: "Laboratory"
+          }
+        ]
+      }
+    ],
+    code: {
+      coding: [
+        {
+          system: "http://loinc.org",
+          code: "718-7",
+          display: "Hemoglobin [Mass/volume] in Blood"
+        }
+      ]
+    },
+    subject: {
+      reference: "Patient/erXuFYUfucBZaryVksYEcMg3"
+    },
+    effectiveDateTime: "2023-04-15T08:30:00Z",
+    issued: "2023-04-15T10:45:00Z",
+    performer: [
+      {
+        reference: "Organization/org-lab-12345",
+        display: "Downtown Medical Laboratory"
+      }
+    ],
+    valueQuantity: {
+      value: 10.5,
+      unit: "g/dL",
+      system: "http://unitsofmeasure.org",
+      code: "g/dL"
+    },
+    referenceRange: [
+      {
+        low: {
+          value: 12.0,
+          unit: "g/dL",
+          system: "http://unitsofmeasure.org",
+          code: "g/dL"
+        },
+        high: {
+          value: 15.5,
+          unit: "g/dL",
+          system: "http://unitsofmeasure.org",
+          code: "g/dL"
+        },
+        appliesTo: [
+          {
+            text: "Adult female"
+          }
+        ]
+      }
+    ],
+    interpretation: [
+      {
+        coding: [
+          {
+            system: "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            code: "L",
+            display: "Low"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    resourceType: "Observation",
+    id: "obs-lab-12345-3-platelets",
+    status: "final",
+    category: [
+      {
+        coding: [
+          {
+            system: "http://terminology.hl7.org/CodeSystem/observation-category",
+            code: "laboratory",
+            display: "Laboratory"
+          }
+        ]
+      }
+    ],
+    code: {
+      coding: [
+        {
+          system: "http://loinc.org",
+          code: "777-3",
+          display: "Platelets [#/volume] in Blood"
+        }
+      ]
+    },
+    subject: {
+      reference: "Patient/erXuFYUfucBZaryVksYEcMg3"
+    },
+    effectiveDateTime: "2023-04-15T08:30:00Z",
+    issued: "2023-04-15T10:45:00Z",
+    performer: [
+      {
+        reference: "Organization/org-lab-12345",
+        display: "Downtown Medical Laboratory"
+      }
+    ],
+    valueQuantity: {
+      value: 95,
+      unit: "10*9/L",
+      system: "http://unitsofmeasure.org",
+      code: "10*9/L"
+    },
+    referenceRange: [
+      {
+        low: {
+          value: 150,
+          unit: "10*9/L",
+          system: "http://unitsofmeasure.org",
+          code: "10*9/L"
+        },
+        high: {
+          value: 400,
+          unit: "10*9/L",
+          system: "http://unitsofmeasure.org",
+          code: "10*9/L"
+        }
+      }
+    ],
+    interpretation: [
+      {
+        coding: [
+          {
+            system: "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            code: "L",
+            display: "Low"
+          }
+        ]
+      }
+    ]
+  },
   
-  // Assessment observation for Patient 1 (Lopez)
+  // Assessment observation for Patient 1 (Lopez - Lupus patient)
   {
     resourceType: "Observation",
     id: "obs-assess-12345",
@@ -180,12 +435,12 @@ const observations = [
     code: {
       coding: [
         {
-          system: "http://loinc.org",
-          code: "85354-9",
-          display: "Blood pressure panel with all children optional"
+          system: "http://snomed.info/sct",
+          code: "5880005",
+          display: "Physical examination"
         }
       ],
-      text: "Blood pressure assessment"
+      text: "Lupus Assessment"
     },
     subject: {
       reference: "Patient/erXuFYUfucBZaryVksYEcMg3"
@@ -197,50 +452,74 @@ const observations = [
         display: "Dr. Sarah Johnson"
       }
     ],
+    note: [
+      {
+        text: "Patient presents with malar rash, photosensitivity, and joint pain in hands and knees. SLEDAI score of 12 indicating moderate disease activity."
+      }
+    ],
     component: [
       {
         code: {
           coding: [
             {
-              system: "http://loinc.org",
-              code: "8480-6",
-              display: "Systolic blood pressure"
+              system: "http://snomed.info/sct",
+              code: "103244003",
+              display: "Dermatological finding"
             }
-          ]
+          ],
+          text: "Malar Rash"
         },
-        valueQuantity: {
-          value: 142,
-          unit: "mmHg",
-          system: "http://unitsofmeasure.org",
-          code: "mm[Hg]"
-        },
-        interpretation: [
-          {
-            coding: [
-              {
-                system: "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
-                code: "H",
-                display: "High"
-              }
-            ]
-          }
-        ]
+        valueCodeableConcept: {
+          coding: [
+            {
+              system: "http://snomed.info/sct",
+              code: "52448006",
+              display: "Present"
+            }
+          ],
+          text: "Present"
+        }
       },
       {
         code: {
           coding: [
             {
-              system: "http://loinc.org",
-              code: "8462-4",
-              display: "Diastolic blood pressure"
+              system: "http://snomed.info/sct",
+              code: "371030004",
+              display: "Photosensitivity"
             }
           ]
         },
-        valueQuantity: {
-          value: 88,
-          unit: "mmHg",
-          system: "http://unitsofmeasure.org",
-          code: "mm[Hg]"
+        valueCodeableConcept: {
+          coding: [
+            {
+              system: "http://snomed.info/sct",
+              code: "52448006",
+              display: "Present"
+            }
+          ],
+          text: "Present"
+        }
+      },
+      {
+        code: {
+          coding: [
+            {
+              system: "http://snomed.info/sct",
+              code: "57676002",
+              display: "Joint pain"
+            }
+          ]
+        },
+        valueCodeableConcept: {
+          coding: [
+            {
+              system: "http://snomed.info/sct",
+              code: "52448006",
+              display: "Present"
+            }
+          ],
+          text: "Present in hands and knees"
         }
       }
     ]

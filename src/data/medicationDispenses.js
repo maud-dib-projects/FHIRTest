@@ -10,8 +10,8 @@ const medicationDispenses = [
       coding: [
         {
           system: "http://www.nlm.nih.gov/research/umls/rxnorm",
-          code: "308056",
-          display: "Lisinopril 20 MG Oral Tablet"
+          code: "835829",
+          display: "Hydroxychloroquine 200 MG Oral Tablet"
         }
       ]
     },
@@ -32,6 +32,89 @@ const medicationDispenses = [
       }
     ],
     quantity: {
+      value: 60,
+      unit: "tablets",
+      system: "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+      code: "TAB"
+    },
+    daysSupply: {
+      value: 30,
+      unit: "days"
+    },
+    whenPrepared: "2023-05-10T10:30:00Z",
+    whenHandedOver: "2023-05-10T14:45:00Z",
+    dosageInstruction: [
+      {
+        sequence: 1,
+        text: "Take one tablet by mouth twice daily",
+        timing: {
+          repeat: {
+            frequency: 2,
+            period: 1,
+            periodUnit: "d"
+          }
+        },
+        route: {
+          coding: [
+            {
+              system: "http://snomed.info/sct",
+              code: "26643006",
+              display: "Oral route"
+            }
+          ]
+        },
+        doseAndRate: [
+          {
+            type: {
+              coding: [
+                {
+                  system: "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+                  code: "ordered",
+                  display: "Ordered"
+                }
+              ]
+            },
+            doseQuantity: {
+              value: 1,
+              unit: "tablet",
+              system: "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+              code: "TAB"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    resourceType: "MedicationDispense",
+    id: "med-disp-12346",
+    status: "completed",
+    medicationCodeableConcept: {
+      coding: [
+        {
+          system: "http://www.nlm.nih.gov/research/umls/rxnorm",
+          code: "310965",
+          display: "Prednisone 10 MG Oral Tablet"
+        }
+      ]
+    },
+    subject: {
+      reference: "Patient/erXuFYUfucBZaryVksYEcMg3"
+    },
+    performer: [
+      {
+        actor: {
+          reference: "Practitioner/pract-12345",
+          display: "Dr. Sarah Johnson"
+        }
+      }
+    ],
+    authorizingPrescription: [
+      {
+        reference: "MedicationRequest/medrx-12346"
+      }
+    ],
+    quantity: {
       value: 30,
       unit: "tablets",
       system: "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
@@ -46,12 +129,13 @@ const medicationDispenses = [
     dosageInstruction: [
       {
         sequence: 1,
-        text: "Take one tablet by mouth once daily",
+        text: "Take one tablet by mouth daily in the morning with food",
         timing: {
           repeat: {
             frequency: 1,
             period: 1,
-            periodUnit: "d"
+            periodUnit: "d",
+            when: ["ACM"]
           }
         },
         route: {
