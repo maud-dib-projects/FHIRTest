@@ -33,6 +33,7 @@ const coverages = [
     subscriber: {
       reference: "Patient/erXuFYUfucBZaryVksYEcMg3"
     },
+    subscriberId: "BC98765432",
     beneficiary: {
       reference: "Patient/erXuFYUfucBZaryVksYEcMg3"
     },
@@ -123,6 +124,7 @@ const coverages = [
     subscriber: {
       reference: "Patient/eq081-VQEgP8drUUqCWzHfw3"
     },
+    subscriberId: "AET11223344",
     beneficiary: {
       reference: "Patient/eq081-VQEgP8drUUqCWzHfw3"
     },
@@ -213,6 +215,7 @@ const coverages = [
     subscriber: {
       reference: "Patient/eAB3mDIBBcyUKviyzrxsnAw3"
     },
+    subscriberId: "CIG12345678",
     beneficiary: {
       reference: "Patient/eAB3mDIBBcyUKviyzrxsnAw3"
     },
