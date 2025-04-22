@@ -12,6 +12,7 @@ const patientRoutes = require('./routes/patientRoutes');
 const medicationDispenseRoutes = require('./routes/medicationDispenseRoutes');
 const observationRoutes = require('./routes/observationRoutes');
 const coverageRoutes = require('./routes/coverageRoutes');
+const organizationRoutes = require('./routes/organizationRoutes');
 
 // Import middleware
 const errorHandler = require('./middleware/errorHandler');
@@ -63,6 +64,7 @@ app.use('/api/v1/Patient', patientRoutes);
 app.use('/api/v1/MedicationDispense', medicationDispenseRoutes);
 app.use('/api/v1/Observation', observationRoutes);
 app.use('/api/v1/Coverage', coverageRoutes);
+app.use('/api/v1/Organization', organizationRoutes);
 
 // Handle 404 errors
 app.use((req, res) => {

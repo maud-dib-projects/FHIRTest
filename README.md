@@ -22,9 +22,9 @@ A simple Node.js API demonstrating FHIR standards with canned responses. Ideal f
 
 3.  **Run:**
     ```bash
-    npm start
+    npm run start
     or 
-    npm dev
+    npm run dev
     ```
     The API will run on `http://localhost:3000`, port can be changed with `.env` file.
 
