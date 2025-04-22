@@ -6,6 +6,21 @@ const coverages = [
     resourceType: "Coverage",
     id: "cov-12345",
     status: "active",
+    identifier: [
+      {
+        system: "https://www.bluecross.example.com/policy",
+        value: "POL987654321",
+        type: {
+          coding: [
+            {
+              system: "http://terminology.hl7.org/CodeSystem/v2-0203",
+              code: "MB",
+              display: "Member Number"
+            }
+          ]
+        }
+      }
+    ],
     type: {
       coding: [
         {
@@ -48,7 +63,7 @@ const coverages = [
             }
           ]
         },
-        value: "BCGROUP123",
+        value: "GRP778899",
         name: "Blue Cross Group Plan"
       },
       {
@@ -62,6 +77,18 @@ const coverages = [
         },
         value: "PREMIUM",
         name: "Premium Plan"
+      },
+      {
+        type: {
+          coding: [
+            {
+              system: "http://terminology.hl7.org/CodeSystem/coverage-class",
+              code: "rxbin",
+              display: "RX BIN"
+            }
+          ]
+        },
+        value: "610415"
       }
     ]
   },
@@ -69,6 +96,21 @@ const coverages = [
     resourceType: "Coverage",
     id: "cov-67890",
     status: "active",
+    identifier: [
+      {
+        system: "https://www.aetna.example.com/memberid",
+        value: "MEM112233445",
+        type: {
+          coding: [
+            {
+              system: "http://terminology.hl7.org/CodeSystem/v2-0203",
+              code: "MB",
+              display: "Member Number"
+            }
+          ]
+        }
+      }
+    ],
     type: {
       coding: [
         {
@@ -111,7 +153,7 @@ const coverages = [
             }
           ]
         },
-        value: "AETGRP456",
+        value: "AET556677",
         name: "Aetna Group Plan"
       },
       {
@@ -125,6 +167,18 @@ const coverages = [
         },
         value: "STANDARD",
         name: "Standard Plan"
+      },
+      {
+        type: {
+          coding: [
+            {
+              system: "http://terminology.hl7.org/CodeSystem/coverage-class",
+              code: "rxbin",
+              display: "RX BIN"
+            }
+          ]
+        },
+        value: "610591"
       }
     ]
   },
@@ -132,6 +186,21 @@ const coverages = [
     resourceType: "Coverage",
     id: "cov-54321",
     status: "active",
+    identifier: [
+      {
+        system: "https://www.cigna.example.com/policyid",
+        value: "CIG123456789",
+        type: {
+          coding: [
+            {
+              system: "http://terminology.hl7.org/CodeSystem/v2-0203",
+              code: "MB",
+              display: "Member Number"
+            }
+          ]
+        }
+      }
+    ],
     type: {
       coding: [
         {
@@ -174,7 +243,7 @@ const coverages = [
             }
           ]
         },
-        value: "CIGGRP789",
+        value: "CIG998877",
         name: "Cigna Group Plan"
       },
       {
@@ -188,6 +257,18 @@ const coverages = [
         },
         value: "GOLD",
         name: "Gold Plan"
+      },
+      {
+        type: {
+          coding: [
+            {
+              system: "http://terminology.hl7.org/CodeSystem/coverage-class",
+              code: "rxbin",
+              display: "RX BIN"
+            }
+          ]
+        },
+        value: "004336"
       }
     ]
   }
